@@ -9,6 +9,11 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
+          @if (session()->has('success'))
+          <div class="mb-3 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            {{ session('success') }}
+          </div>
+          @endif
           <a href="{{ route('jurusans.create') }}">
             <x-button class="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               {{ __('Tambah Jurusan') }}
@@ -51,7 +56,7 @@
                           {{ $jurusan->title }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {{ $jurusan->descritpion }}
+                          {{ $jurusan->description }}
                         </td>
                         <td>
                           <a href="{{ route('jurusans.show', $jurusan->id) }}">

@@ -39,11 +39,12 @@ class JurusanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => ['required', 'string']
+            'title' => ['required', 'string'],
+            'description' => ['required', 'string'],
         ]);
 
         Jurusan::create($request->all());
-        return redirect()->route('jurusan.index')
+        return redirect()->route('jurusans.index')
             ->with('success', 'Jurusan Data saved successfully.');
     }
 
@@ -81,13 +82,14 @@ class JurusanController extends Controller
     {
         //validasi update data jurusan
         $request->validate([
-            'title' => ['required', 'string']
+            'title' => ['required', 'string'],
+            'description' => ['required', 'string'],
         ]);
 
         $jurusan->update($request->all());
 
         /// setelah berhasil mengubah data
-        return redirect()->route('jurusan.index')
+        return redirect()->route('jurusans.index')
             ->with('success', 'Jurusan data updated successfully');
     }
 
@@ -102,7 +104,7 @@ class JurusanController extends Controller
     {
         $jurusan->delete();
 
-        return redirect()->route('jurusan.index')
+        return redirect()->route('jurusans.index')
             ->with('success', 'Jurusan data deleted successfully');
     }
 }

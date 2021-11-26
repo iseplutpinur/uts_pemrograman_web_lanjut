@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Employees') }}
+      {{ __('Jurusan') }}
     </h2>
   </x-slot>
 
@@ -25,58 +25,25 @@
             @endif
 
             <div class="text-right">
-              <a href="{{ route('employees.index') }}">
+              <a href="{{ route('jurusans.index') }}">
                 <x-button class="mb-4">
                   {{ __('Back') }}
                 </x-button>
               </a>
             </div>
-            <form action="{{ route('employees.update',$employee->id) }}" method="POST">
+            <form action="{{ route('jurusans.update',$jurusan->id) }}" method="POST">
               @csrf
               @method('PUT')
-              <div class="grid lg:grid-cols-2 gap-4">
-                <!-- Emp ID -->
-                <div>
-                  <x-label for="emp_id" :value="__('Employee ID')" />
+              <div class="mt-4">
+                <x-label for="title" :value="__('Nama')" />
+                <x-input id="title" class="block mt-1 w-full" type="text" name="title" value="{{ $jurusan->title }}"
+                  required />
+              </div>
 
-                  <x-input id="emp_id" class="block mt-1 w-full" type="text" name="emp_id"
-                    value="{{ $employee->emp_id }}" required />
-                </div>
-
-                <!-- Name -->
-                <div>
-                  <x-label for="emp_name" :value="__('Name')" />
-                  <x-input id="emp_name" class="block mt-1 w-full" type="text" name="emp_name"
-                    value="{{ $employee->emp_name }}" required />
-                </div>
-
-                <!-- Position -->
-                <div class="mt-4">
-                  <x-label for="position" :value="__('Position')" />
-                  <x-input id="position" class="block mt-1 w-full" type="text" name="position"
-                    value="{{ $employee->position }}" required />
-                </div>
-
-                <!-- Email-->
-                <div class="mt-4">
-                  <x-label for="emp_email" :value="__('Email')" />
-                  <x-input id="emp_email" class="block mt-1 w-full" type="email" name="emp_email"
-                    value="{{ $employee->emp_email }}" required />
-                </div>
-
-                <!-- phone-->
-                <div class="mt-4">
-                  <x-label for="emp_phone" :value="__('Phone Number')" />
-                  <x-input id="emp_phone" class="block mt-1 w-full" type="text" name="emp_phone"
-                    value="{{ $employee->emp_phone }}" required />
-                </div>
-
-                <!-- address-->
-                <div class="mt-4">
-                  <x-label for="emp_address" :value="__('Address')" />
-                  <x-input id="emp_address" class="block mt-1 w-full" type="text" name="emp_address"
-                    value="{{ $employee->emp_address }}" required />
-                </div>
+              <div class="mt-4">
+                <x-label for="description" :value="__('Deskripsi')" />
+                <x-input id="description" class="block mt-1 w-full" type="text" name="description"
+                  value="{{ $jurusan->description }}" required />
               </div>
               <div class="text-right">
                 <x-button class="mt-4 ">

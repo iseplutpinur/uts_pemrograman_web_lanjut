@@ -35,50 +35,14 @@
             <form action="{{ route('jurusans.store') }}" method="POST">
               @csrf
 
-              <div class="grid lg:grid-cols-2 gap-4">
-                <!-- Emp ID -->
-                <div>
-                  <x-label for="emp_id" :value="__('Employee ID')" />
-
-                  <x-input id="emp_id" class="block mt-1 w-full" type="text" name="emp_id" :value="old('emp_id')"
-                    required autofocus />
-                </div>
-
-                <!-- Name -->
-                <div>
-                  <x-label for="emp_name" :value="__('Name')" />
-                  <x-input id="emp_name" class="block mt-1 w-full" type="text" name="emp_name" :value="old('emp_name')"
-                    required />
-                </div>
-
-                <!-- Position -->
-                <div class="mt-4">
-                  <x-label for="position" :value="__('Position')" />
-                  <x-input id="position" class="block mt-1 w-full" type="text" name="position" :value="old('position')"
-                    required />
-                </div>
-
-                <!-- Email-->
-                <div class="mt-4">
-                  <x-label for="emp_email" :value="__('Email')" />
-                  <x-input id="emp_email" class="block mt-1 w-full" type="email" name="emp_email"
-                    :value="old('emp_email')" required />
-                </div>
-
-                <!-- phone-->
-                <div class="mt-4">
-                  <x-label for="emp_phone" :value="__('Phone Number')" />
-                  <x-input id="emp_phone" class="block mt-1 w-full" type="text" name="emp_phone"
-                    :value="old('emp_phone')" required />
-                </div>
-
-                <!-- address-->
-                <div class="mt-4">
-                  <x-label for="emp_address" :value="__('Address')" />
-                  <x-input id="emp_address" class="block mt-1 w-full" type="text" name="emp_address"
-                    :value="old('emp_address')" required />
-                </div>
-
+              <div class="mt-4">
+                <x-label for="title" :value="__('Nama')" />
+                <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('name')" required />
+              </div>
+              <div class="mt-4">
+                <x-label for="description" :value="__('Deskripsi')" />
+                <x-input id="description" class="block mt-1 w-full" type="text" name="description"
+                  :value="old('description')" />
               </div>
               <div class="text-right">
                 <x-button class="mt-4 ">
