@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Membuat Laporan PDF Dengan DOMPDF Laravel</title>
+  <title>Data Mahasiswa</title>
 </head>
 
 <body>
@@ -13,9 +13,7 @@
     }
   </style>
   <center>
-    <h5>Membuat Laporan PDF Dengan DOMPDF Laravel</h4>
-      <h6><a target="_blank"
-          href="https://www.malasngoding.com/membuat-laporan-…n-dompdf-laravel/">www.malasngoding.com</a>
+    <h5>Data Mahasiswa</h4>
     </h5>
   </center>
 
@@ -23,25 +21,23 @@
     <thead>
       <tr>
         <th>No</th>
+        <th>NPM</th>
         <th>Nama</th>
-        <th>Email</th>
+        <th>Jurusan</th>
         <th>Alamat</th>
-        <th>Telepon</th>
-        <th>Pekerjaan</th>
       </tr>
     </thead>
     <tbody>
-      {{-- @php $i=1 @endphp
-      @foreach($pegawai as $p)
+      @php $i=1 @endphp
+      @foreach($mahasiswas as $mahasiswa)
       <tr>
         <td>{{ $i++ }}</td>
-        <td>{{$p->nama}}</td>
-        <td>{{$p->email}}</td>
-        <td>{{$p->alamat}}</td>
-        <td>{{$p->telepon}}</td>
-        <td>{{$p->pekerjaan}}</td>
+        <td>{{$mahasiswa->npm}}</td>
+        <td>{{$mahasiswa->nama}}</td>
+        <td>{{$mahasiswa->jurusan->title}}</td>
+        <td>{{$mahasiswa->alamat}}</td>
       </tr>
-      @endforeach --}}
+      @endforeach
     </tbody>
   </table>
 

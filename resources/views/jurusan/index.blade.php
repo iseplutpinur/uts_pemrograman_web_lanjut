@@ -16,7 +16,7 @@
           @endif
           <a href="{{ route('jurusans.create') }}">
             <x-button class="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              {{ __('Tambah Jurusan') }}
+              <i class="fa-solid fa-plus mr-2"></i> Tambah Jurusan
             </x-button>
           </a>
 
@@ -61,13 +61,13 @@
                         <td>
                           <a href="{{ route('jurusans.show', $jurusan->id) }}">
                             <x-button>
-                              {{ __('Show') }}
+                              <i class="fa-solid fa-eye mr"></i> SHOW
                             </x-button>
                           </a>
                           <a href="{{ route('jurusans.edit', $jurusan->id) }}">
                             <x-button
                               class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 mx-2 rounded inline-block">
-                              {{ __('Edit') }}
+                              <i class="fa-solid fa-pen-to-square mr-2"></i> EDIT
                             </x-button>
                           </a>
 
@@ -78,7 +78,7 @@
                             <x-button
                               class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mx-2 rounded inline-block"
                               onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                              {{ __('Delete') }}
+                              <i class="fas fa-trash mr-2"></i> DELETE
                             </x-button>
                           </form>
 

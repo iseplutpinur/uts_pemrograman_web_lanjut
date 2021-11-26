@@ -1,6 +1,5 @@
 <div class="fixed z-10 inset-0 overflow-y-auto">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-
     <div class="fixed inset-0 transition-opacity">
       <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
     </div>
@@ -11,7 +10,7 @@
       <form>
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div>
-            <h1 class="font-bold text-center mb-4">CREATE POSTS</h1>
+            <h1 class="font-bold text-center mb-4">DATA MAHASISWA</h1>
           </div>
           <div>
             <div class="mb-2">
@@ -19,17 +18,35 @@
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900" placeholder="Input Post">
             </div>
             <div class="mb-2">
-              <label for="title" class="block">Title</label>
-              <input wire:model="title" type="text"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900" placeholder="Input Post">
-              @error('title') <h1 class="text-red-500">{{$message}}</h1>@enderror
+              <label for="npm" class="block">NPM</label>
+              <input wire:model="npm" type="text"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900" placeholder="NPM">
+              @error('npm') <h1 class="text-red-500">{{$message}}</h1>@enderror
             </div>
             <div class="mb-2">
-              <label for="description" class="block">Description</label>
-              <textarea wire:model="description" name="description"
+              <label for="nama" class="block">Nama</label>
+              <input wire:model="nama" type="text"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900" placeholder="Nama Lengkap">
+              @error('nama') <h1 class="text-red-500">{{$message}}</h1>@enderror
+            </div>
+            <div class="mb-2">
+              <label for="jurusan_id" class="block">Jurusan</label>
+              <select wire:model="jurusan_id"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900">
+                @foreach ($jurusans as $jurusan)
+                <option value="{{$jurusan->id}}">{{$jurusan->title}}</option>
+                @endforeach
+
+              </select>
+              @error('jurusan_id') <h1 class="text-red-500">{{$message}}</h1>@enderror
+            </div>
+
+            <div class="mb-2">
+              <label for="alamat" class="block">Alamat</label>
+              <textarea wire:model="alamat" name="alamat"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900"
-                placeholder="Input Post"></textarea>
-              @error('description') <h1 class="text-red-500">{{$message}}</h1>@enderror
+                placeholder="Alamat Lengkap"></textarea>
+              @error('alamat') <h1 class="text-red-500">{{$message}}</h1>@enderror
             </div>
           </div>
         </div>
