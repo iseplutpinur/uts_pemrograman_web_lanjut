@@ -36,7 +36,6 @@
                 @foreach ($jurusans as $jurusan)
                 <option value="{{$jurusan->id}}">{{$jurusan->title}}</option>
                 @endforeach
-
               </select>
               @error('jurusan_id') <h1 class="text-red-500">{{$message}}</h1>@enderror
             </div>

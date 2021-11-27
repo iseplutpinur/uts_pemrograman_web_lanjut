@@ -3,7 +3,7 @@
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <button wire:click="showModal()"
                 class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-4 rounded mb-2">
-                <i class="fa-solid fa-plus"></i> Create Post
+                <i class="fa-solid fa-plus"></i> Create Mahasiswa
             </button>
             <button wire:click="exportExcel()"
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded mb-2">
@@ -17,7 +17,7 @@
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <input wire:model="search" type="text"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-900"
-                placeholder="Search Post...">
+                placeholder="Search Mahasiswa...">
         </div>
     </div>
 
@@ -82,7 +82,7 @@
                             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                                 <span class="inline-block w-1/3 md:hidden font-bold">Jurusan
                                 </span>
-                                {{ $mahasiswa->jurusan->title }}
+                                {{ isset($mahasiswa->jurusan->title) ? $mahasiswa->jurusan->title: '' }}
                             </td>
                             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                                 <span class="inline-block w-1/3 md:hidden font-bold">Alamat
@@ -134,3 +134,21 @@
     })
 </script>
 @endpush
+
+Nama: Isep Lutpi Nur <br>
+NPM: 2113191079<br>
+Mata Kuliah: Pemrograman Web Lanjut<br>
+Dosen Pengampu: Muhammad Nurdin A.M, S.Kom, M.Kom<br>
+<br>
+Link Repository: <a
+    href="https://github.com/iseplutpinur/uts_pemrograman_web_lanjut">https://github.com/iseplutpinur/uts_pemrograman_web_lanjut</a><br>
+<br>
+Link Referensi:<br>
+Sweetalert: <a
+    href="https://dev.to/realrashid/how-to-use-sweetalert2-with-livewire-56i6">https://dev.to/realrashid/how-to-use-sweetalert2-with-livewire-56i6</a><br>
+FontAwesome: <a
+    href="https://medium.com/swlh/using-font-awesome-with-laravel-8-x-1f80cb6d8f10">https://medium.com/swlh/using-font-awesome-with-laravel-8-x-1f80cb6d8f10</a><br>
+Export Excel: <a
+    href="https://www.malasngoding.com/export-excel-laravel/">https://www.malasngoding.com/export-excel-laravel/</a><br>
+Export PDF: <a
+    href="https://www.malasngoding.com/membuat-laporan-pdf-dengan-dompdf-laravel/">https://www.malasngoding.com/membuat-laporan-pdf-dengan-dompdf-laravel/</a><br>

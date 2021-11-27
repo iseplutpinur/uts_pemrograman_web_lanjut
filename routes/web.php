@@ -11,6 +11,5 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
-Route::resource('jurusans', JurusanController::class);
+Route::resource('jurusans', JurusanController::class)->middleware(['auth']);
 require __DIR__ . '/auth.php';
