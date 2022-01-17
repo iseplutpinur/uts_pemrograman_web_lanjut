@@ -38,12 +38,23 @@ class MahasiswaForm extends Component
     public function showModal()
     {
         $this->jurusan_id = (in_array($this->jurusan_id, [null, ''])) ? Jurusan::first()->id : $this->jurusan_id;
+        $this->jurusan_id = is_object($this->jurusan_id) ? $this->jurusan_id->id : $this->jurusan_id;
         $this->isOpen = true;
     }
 
     public function hideModal()
     {
         $this->isOpen = false;
+        $this->resetForm();
+    }
+
+    private function resetForm()
+    {
+        $this->postId = '';
+        $this->npm = '';
+        $this->nama = '';
+        $this->jurusan_id = Jurusan::first();
+        $this->alamat = '';
     }
 
     public function store()
@@ -67,11 +78,7 @@ class MahasiswaForm extends Component
         $this->hideModal();
 
         session()->flash('info', $this->postId ? 'Mahasiswa Update Successfully' : 'Mahasiswa Created Successfully');
-        $this->postId = '';
-        $this->npm = '';
-        $this->nama = '';
-        $this->jurusan_id = Jurusan::first();
-        $this->alamat = '';
+        $this->resetForm();
     }
 
     public function edit($id)
@@ -112,8 +119,7 @@ class MahasiswaForm extends Component
         $jurusans = Jurusan::all();
         $searchParams = '%' . $this->search . '%';
         return view('livewire.mahasiswa-form', [
-            'mahasiswas' => Mahasiswa::with(['jurusan'])
-                ->where('nama', 'like', $searchParams)->latest()->paginate(5),
+            'mahasiswas' => Mahasiswa::with(['jurusan'])->where('nama', 'like', $searchParams)->get(),
             'jurusans' => $jurusans
         ]);
     }

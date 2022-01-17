@@ -108,6 +108,8 @@
             </div>
         </div>
     </div>
+
+
 </div>
 @push('scripts')
 <script type="text/javascript">
@@ -134,21 +136,3 @@
     })
 </script>
 @endpush
-
-Nama: Isep Lutpi Nur <br>
-NPM: 2113191079<br>
-Mata Kuliah: Pemrograman Web Lanjut<br>
-Dosen Pengampu: Muhammad Nurdin A.M, S.Kom, M.Kom<br>
-<br>
-Link Repository: <a
-    href="https://github.com/iseplutpinur/uts_pemrograman_web_lanjut">https://github.com/iseplutpinur/uts_pemrograman_web_lanjut</a><br>
-<br>
-Link Referensi:<br>
-Sweetalert: <a
-    href="https://dev.to/realrashid/how-to-use-sweetalert2-with-livewire-56i6">https://dev.to/realrashid/how-to-use-sweetalert2-with-livewire-56i6</a><br>
-FontAwesome: <a
-    href="https://medium.com/swlh/using-font-awesome-with-laravel-8-x-1f80cb6d8f10">https://medium.com/swlh/using-font-awesome-with-laravel-8-x-1f80cb6d8f10</a><br>
-Export Excel: <a
-    href="https://www.malasngoding.com/export-excel-laravel/">https://www.malasngoding.com/export-excel-laravel/</a><br>
-Export PDF: <a
-    href="https://www.malasngoding.com/membuat-laporan-pdf-dengan-dompdf-laravel/">https://www.malasngoding.com/membuat-laporan-pdf-dengan-dompdf-laravel/</a><br>
